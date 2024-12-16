@@ -17,10 +17,10 @@ let password = false
 
 /**
  * @param {string} input
- * @param {import("../index.js").Options} opts
  * @param {import("../index.js").InterfaceExtended} rl
+ * @param {Partial<import("../index.js").Options>} [opts]
  */
-const handleInput = (input, opts, rl) => {
+const handleInput = (input, rl, opts = {}) => {
   if (password) {
     rl.setPrompt(myPrompt)
     opts.silent = false
@@ -51,7 +51,7 @@ const handleInput = (input, opts, rl) => {
       opts.repl = false
       break
     case "history":
-      rl.history.forEach((h, i) => console.log(`${i}: ${h}`))
+      rl.history?.forEach((h, i) => console.log(`${i}: ${h}`))
       break
     default:
       if (!opts.silent) console.log("Unknown command: ", input)

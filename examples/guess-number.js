@@ -7,10 +7,10 @@ prompt("Guess what number I'm thinking of? ", {
 
   /**
    * @param {string} input
-   * @param {import("../index.js").Options} opts
    * @param {import("../index.js").InterfaceExtended} rl
+   * @param {import("../index.js").Options} [opts]
    */
-  handleInput(input, opts, rl) {
+  handleInput(input, rl, opts = {}) {
     rl.setPrompt("Try Again? ")
     if (+input === randomNumber) {
       console.log("You guessed it!")

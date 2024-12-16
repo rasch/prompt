@@ -4,15 +4,15 @@ import { Writable } from "node:stream"
 
 /**
  * @typedef {object} HistoryField
- * @property {string[]} history
+ * @property {string[]} [history]
  * @typedef {Interface & HistoryField} InterfaceExtended
  */
 
 /**
- * @typedef {function} HandleInput
+ * @callback HandleInput
  * @param {string} input
+ * @param {InterfaceExtended} rl
  * @param {Partial<Options>} [opts]
- * @param {InterfaceExtended} [rl]
  * @returns {void}
  */
 
@@ -64,7 +64,7 @@ export const prompt = (query, opts = {}) =>
     rl.on("line", input => {
       answer = input
       opts.silent && stdout.write("\n")
-      opts.handleInput && opts.handleInput(input, opts, rl)
+      opts.handleInput && opts.handleInput(input, rl, opts)
       opts.repl ? rl.prompt() : rl.close()
       opts.silent && opts.repl && stdout.write(rl.getPrompt())
     })
