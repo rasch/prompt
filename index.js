@@ -60,9 +60,9 @@ export const prompt = (query, opts = {}) =>
     })
 
     rl.on("line", input => {
-      answer = input
+      answer = input.trim()
       opts.silent && stdout.write("\n")
-      opts.handleInput && opts.handleInput(input, rl, opts)
+      opts.handleInput && opts.handleInput(answer, rl, opts)
       opts.repl ? rl.prompt() : rl.close()
       opts.silent && opts.repl && stdout.write(rl.getPrompt())
     })
