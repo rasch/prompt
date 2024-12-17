@@ -46,9 +46,7 @@ export const prompt = (query, opts = {}) =>
       output: mutableStdout,
       terminal: true,
       completer: line => [
-        opts.completions?.filter(c => c.startsWith(line)) ??
-          opts.completions ??
-          [],
+        opts.completions?.filter(c => c.startsWith(line)) ?? [],
         line,
       ],
     })
