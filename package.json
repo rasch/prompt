@@ -1,15 +1,14 @@
 {
   "name": "@rasch/prompt",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "an interactive prompt for JavaScript CLI applications",
   "type": "module",
   "files": [
     "index.js",
     "index.d.ts"
   ],
-  "main": "index.js",
-  "exports": "index.js",
-  "types": "index.d.js",
+  "exports": "./index.js",
+  "types": "./index.d.js",
   "scripts": {
     "clean": "rm -rf node_modules coverage index.d.ts",
     "test": "node index.spec.js",
