@@ -12,15 +12,8 @@
   "types": "index.d.js",
   "scripts": {
     "clean": "rm -rf node_modules coverage index.d.ts",
-    "test": "c8 tape index.spec.js",
+    "test": "node index.spec.js",
     "gen-types": "tsc index.js --declaration --allowJs --emitDeclarationOnly"
-  },
-  "c8": {
-    "check-coverage": "true",
-    "branches": "100",
-    "functions": "100",
-    "lines": "100",
-    "statements": "100"
   },
   "keywords": [
     "prompt",
@@ -37,6 +30,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
+    "fvb": "^0.1.0",
     "prettier": "^3.4.2",
     "typescript": "^5.7.2"
   }

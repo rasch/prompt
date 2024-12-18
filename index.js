@@ -1,6 +1,6 @@
 import { stdin, stdout } from "node:process"
 import { createInterface, Interface } from "node:readline/promises"
-import { Writable } from "node:stream"
+import { Readable, Writable } from "node:stream"
 
 /**
  * @typedef {object} HistoryField
@@ -22,6 +22,8 @@ import { Writable } from "node:stream"
  * @property {string[]} [completions]
  * @property {boolean} [repl]
  * @property {HandleInput} [handleInput]
+ * @property {boolean} [terminal] for testing
+ * @property {Readable} [input] for testing
  */
 
 /**
@@ -42,9 +44,9 @@ export const prompt = (query, opts = {}) =>
 
     const rl = createInterface({
       prompt: query,
-      input: stdin,
+      input: opts.input ?? stdin,
       output: mutableStdout,
-      terminal: true,
+      terminal: opts.terminal ?? true,
       completer: line => [
         opts.completions?.filter(c => c.startsWith(line)) ?? [],
         line,

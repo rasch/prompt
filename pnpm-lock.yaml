@@ -11,6 +11,9 @@ importers:
       '@types/node':
         specifier: ^22.10.2
         version: 22.10.2
+      fvb:
+        specifier: ^0.1.0
+        version: 0.1.0
       prettier:
         specifier: ^3.4.2
         version: 3.4.2
@@ -22,6 +25,9 @@ packages:
 
   '@types/node@22.10.2':
     resolution: {integrity: sha512-Xxr6BBRCAOQixvonOye19wnzyDiUtTeqldOOmj3CkeblonbccA12PFwlufvRdrpjXxqnmUaeiU5EOA+7s5diUQ==}
+
+  fvb@0.1.0:
+    resolution: {integrity: sha512-6z/c/4XFJFH3zZcyAlL6dK058tDWEwBEPgKEaCEzihdgGdzHaNxcY+pqJHYb6MQKMmGTUPY8gpor+My564IKoQ==}
 
   prettier@3.4.2:
     resolution: {integrity: sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==}
@@ -41,6 +47,8 @@ snapshots:
   '@types/node@22.10.2':
     dependencies:
       undici-types: 6.20.0
+
+  fvb@0.1.0: {}
 
   prettier@3.4.2: {}
 
